@@ -184,6 +184,27 @@ h1, h2, h3, h4 {
 
 .bg-dark {
     background-color: var(--bg-dark);
+    color: white;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.bg-dark .section-header h2 {
+    color: white;
+}
+
+.bg-dark .roadmap-content h3 {
+    color: white;
+}
+
+.bg-dark .roadmap-content p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.bg-dark .mentor-advice li {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .section-header {
