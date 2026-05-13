@@ -359,10 +359,15 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
+.mt-4 {
+    margin-top: 32px;
+}
+
 .full-width-img {
     width: 100%;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    display: block;
 }
 
 .benefit-item {
