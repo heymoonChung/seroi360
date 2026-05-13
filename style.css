@@ -600,7 +600,7 @@ h1, h2, h3, h4 {
 /* Responsive */
 @media (max-width: 992px) {
     .hero h1 { font-size: 40px; }
-    .content-grid { grid-template-columns: 1fr; gap: 40px; }
+    .content-grid { grid-template-columns: 1fr; gap: 30px; } /* Reduced gap */
     .content-grid.reverse { direction: ltr; }
     .solution-details { grid-template-columns: 1fr; }
     .container { padding: 0 30px; }
@@ -610,6 +610,8 @@ h1, h2, h3, h4 {
     .nav-links { display: none; }
     .hero { padding: 120px 0 60px; }
     .hero h1 { font-size: 32px; }
-    .section { padding: 80px 0; }
+    .section { padding: 60px 0; } /* Reduced section padding */
     .final-thought { padding: 30px; }
+    .text-content p { font-size: 16px; margin-bottom: 16px; } /* Smaller text and margin */
+    .fade-slider { max-height: 450px; }
 }
