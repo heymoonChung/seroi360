@@ -289,7 +289,8 @@ h1, h2, h3, h4 {
 .fade-slider {
     position: relative;
     width: 100%;
-    height: 400px; /* Fixed height for consistency */
+    aspect-ratio: 3 / 4; /* Portrait ratio */
+    max-height: 650px; /* Prevent it from being too tall on large screens */
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
