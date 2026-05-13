@@ -71,17 +71,21 @@ document.querySelector('#back-to-top').addEventListener('click', () => {
 });
 
 // Fade Slider Logic
-const initSlider = () => {
-    const slides = document.querySelectorAll('.slide');
-    if (slides.length < 2) return;
-
-    let currentSlide = 0;
+const initSliders = () => {
+    const sliders = document.querySelectorAll('.fade-slider');
     
-    setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }, 4000); // Change every 4 seconds
+    sliders.forEach(slider => {
+        const slides = slider.querySelectorAll('.slide');
+        if (slides.length < 2) return;
+
+        let currentSlide = 0;
+        
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000); // Change every 4 seconds
+    });
 };
 
-document.addEventListener('DOMContentLoaded', initSlider);
+document.addEventListener('DOMContentLoaded', initSliders);
