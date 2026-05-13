@@ -289,11 +289,16 @@ h1, h2, h3, h4 {
 .fade-slider {
     position: relative;
     width: 100%;
-    aspect-ratio: 3 / 4; /* Portrait ratio */
-    max-height: 650px; /* Prevent it from being too tall on large screens */
+    aspect-ratio: 3 / 4; /* Default Portrait ratio */
+    max-height: 650px;
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
+}
+
+.fade-slider.landscape {
+    aspect-ratio: 16 / 9; /* Landscape ratio */
+    max-height: 500px;
 }
 
 .slide {
