@@ -69,3 +69,19 @@ window.addEventListener('scroll', () => {
 document.querySelector('#back-to-top').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Fade Slider Logic
+const initSlider = () => {
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length < 2) return;
+
+    let currentSlide = 0;
+    
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 4000); // Change every 4 seconds
+};
+
+document.addEventListener('DOMContentLoaded', initSlider);
