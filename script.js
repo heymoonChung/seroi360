@@ -37,9 +37,19 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Smooth Header Background Change
+// Smooth Header Background and UX Elements Change
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
+    const scrollIndicator = document.querySelector('#scroll-indicator');
+    const backToTop = document.querySelector('#back-to-top');
+    
+    // Scroll Indicator Progress
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    scrollIndicator.style.width = scrolled + "%";
+
+    // Header and Back to Top Visibility
     if (window.scrollY > 50) {
         header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
         header.style.background = 'rgba(255, 255, 255, 0.95)';
@@ -47,4 +57,15 @@ window.addEventListener('scroll', () => {
         header.style.boxShadow = 'none';
         header.style.background = 'rgba(255, 255, 255, 0.8)';
     }
+
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+// Back to Top Click
+document.querySelector('#back-to-top').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
